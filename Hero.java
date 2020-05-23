@@ -40,21 +40,23 @@ public class Hero implements Comparable<Hero> {
         // return hero.getName().compareTo(this.getName()); // tri par ordre décroissant
     }
 
-    // Trie un objet de la classe Hero avec l'attribut age avec un comparateur
-    public static Comparator<Hero> HeroAgeComparator = new Comparator<Hero>() {
+    // // Trie un objet de la classe Hero avec l'attribut age avec un comparateur
+    // public static Comparator<Hero> HeroAgeComparator = new Comparator<Hero>() {
+    //
+    //     public int compare(Hero hero1, Hero hero2) {
+    //
+    //       Integer heroAge1 = hero1.getAge();
+    //       Integer heroAge2 = hero2.getAge();
+    //
+    //       //descending order
+    //        return heroAge2.compareTo(heroAge1);
+    //
+    //      //ascending order
+    //      //return heroAge1.compareTo(heroAge2);
+    //     }
+    // };
 
-        public int compare(Hero hero1, Hero hero2) {
 
-          Integer heroAge1 = hero1.getAge();
-          Integer heroAge2 = hero2.getAge();
-
-          //descending order
-           return heroAge2.compareTo(heroAge1);
-
-         //ascending order
-         //return heroAge1.compareTo(heroAge2);
-        }
-    };
 
 
 }

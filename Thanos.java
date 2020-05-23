@@ -20,18 +20,48 @@ public class Thanos {
         showList(heroes);
 
         // TODO 2: Add a Comparator and sort by age (descending)
+        /* Comparator */
+        // Sort heroes by age
+        Comparator<Hero> HeroAgeComparator = new Comparator<Hero>() {
+            @Override
+            public int compare(Hero hero1, Hero hero2) {
+                if(hero2.getAge() < hero1.getAge()) {
+                    return -1;
+                } else if (hero2.getAge() > hero1.getAge()) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            }
+        };
 
-        Collections.sort(heroes, Hero.HeroAgeComparator);
+        // 2 ème solution possible :
+        // Trie un objet de la classe Hero avec l'attribut age avec un comparateur
+        // Comparator<Hero> HeroAgeComparator = new Comparator<Hero>() {
+        //
+        //     public int compare(Hero hero1, Hero hero2) {
+        //
+        //       Integer heroAge1 = hero1.getAge();
+        //       Integer heroAge2 = hero2.getAge();
+        //
+        //       //descending order
+        //        return heroAge2.compareTo(heroAge1);
+        //
+        //      //ascending order
+        //      //return heroAge1.compareTo(heroAge2);
+        //     }
+        // };
+
+        Collections.sort(heroes, HeroAgeComparator);
 
         System.out.println("\nOrder by age:");
         showList(heroes);
     }
 
+    /* show List*/
     private static void showList(List<Hero> heroes) {
         for (Hero heroe : heroes) {
             System.out.println(heroe.getName() + ", " + heroe.getAge());
         }
     }
-
-
 }
